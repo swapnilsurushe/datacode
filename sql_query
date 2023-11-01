@@ -1,0 +1,30 @@
+-- Query a: Win records by year and gender
+SELECT
+    year,
+    gender,
+    team,
+    SUM(CASE WHEN result = 'win' THEN 1 ELSE 0 END) AS total_wins,
+    100 * SUM(CASE WHEN result = 'win' THEN 1 ELSE 0 END) / COUNT(*) AS win_percentage
+FROM matches
+WHERE result NOT IN ('tie', 'no result', 'DLS')
+GROUP BY year, gender, team;
+
+-- Query b: Highest win percentages in 2019
+SELECT
+    gender,
+    team,
+    MAX(win_percentage) AS max_win_percentage
+FROM (
+    SELECT
+        gender,
+        team,
+        SUM(CASE WHEN result = 'win' THEN 1 ELSE 0 END) AS total_wins,
+        100 * SUM(CASE WHEN result = 'win' THEN 1 ELSE 0 END) / COUNT(*) AS win_percentage
+    FROM matches
+    WHERE year = 2019 AND result NOT IN ('tie', 'no result', 'DLS')
+    GROUP BY gender, team
+) subquery;
+
+-- Query c: Players with the highest strike rate in 2019
+-- You'll need to adapt this query based on your data structure
+-- Ensure you account for handling extras properly
