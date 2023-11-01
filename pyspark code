@@ -1,0 +1,32 @@
+#Question 1. Develop a batch data ingest process to load the ODI match results and ball-by-ball innings data to a database of your choosing (as a default, you can use SQLite). The solution should include a step that downloads files directly from cricsheet.org and performs any required preprocessing. The database schema should store match results and ball-by-ball innings data along with the universe of players that appear across all matches. The process should be runnable from the command line, inclusive of creating any dependencies (e.g. local file directories, the database, etc.). Please include a README.md file with instructions on how to build and run the ingest process to reproduce your results. 
+
+
+import sqlite3
+from pyspark.sql import SparkSession
+
+# Initialize Spark session
+spark = SparkSession.builder.appName("CricketDataIngest").getOrCreate()
+
+# Load the JSON data into a DataFrame
+matches_df = spark.read.json("path_to_matches_data.json")
+innings_df = spark.read.json("path_to_innings_data.json")
+
+# Create a SQLite database
+conn = sqlite3.connect("cricket_data.db")
+
+# Write DataFrames to SQLite tables
+matches_df.write.mode("overwrite").format("jdbc").options(
+    url=f"jdbc:sqlite:cricket_data.db",
+    dbtable="matches",
+).save()
+
+innings_df.write.mode("overwrite").format("jdbc").options(
+    url=f"jdbc:sqlite:cricket_data.db",
+    dbtable="innings",
+).save()
+
+# Close the database connection
+conn.close()
+
+# Stop the Spark session
+spark.stop()
