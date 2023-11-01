@@ -26,5 +26,4 @@ FROM (
 ) subquery;
 
 -- Query c: Players with the highest strike rate in 2019
--- You'll need to adapt this query based on your data structure
--- Ensure you account for handling extras properly
+
