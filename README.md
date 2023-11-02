@@ -147,7 +147,7 @@ Please note that the specific details in these README files should correspond to
 
 
 
-Question 3. Please provide a brief written answer to the following question. The coding assessment focused on a batch backfilling use case. If the use case was extended to required incrementally loading new match data on a go-forward basis, how would your solution change?
+##Question 3. Please provide a brief written answer to the following question. The coding assessment focused on a batch backfilling use case. If the use case was extended to required incrementally loading new match data on a go-forward basis, how would your solution change?
 If the use case was extended to require incrementally loading new match data on a go-forward basis, the solution would need several changes and enhancements to handle ongoing data updates efficiently. solution would change:
 
 1. Data Source Monitoring:
@@ -185,9 +185,9 @@ to adapt the solution for incremental loading of new data, you would need to inc
 
 
 
-Certainly, I can provide an example based on Control-M, a widely used workload automation software in data engineering projects:
+## Control-M, a widely used workload automation software in data engineering projects:
 
-Question 4: Can you provide an example of when you learned about a new technique, method, or tool during a project and how you applied it?
+##Question 4: Can you provide an example of when you learned about a new technique, method, or tool during a project and how you applied it?
 In a data engineering project, I was tasked with improving job scheduling, monitoring, and orchestration of data pipelines. The existing setup lacked scalability and real-time monitoring capabilities, which were crucial for the project's success. I learned about Control-M and applied it to address these challenges.
 Inspiration:
 The inspiration to explore Control-M came from the project's specific requirements:
@@ -203,7 +203,7 @@ How I Learned and Applied Control-M:
 
 7. Documentation: I documented the setup, workflows, and best practices for using Control-M in the data engineering environment. This documentation served as a resource for the team and future projects.
 
-Outcome:
+#Outcome:
 The application of Control-M improved the efficiency and reliability of data pipelines in the project:
 1. Improved Scalability: The project could now handle growing data volumes without significant performance degradation.
 2. Real-time Monitoring: Real-time monitoring and alerts allowed us to identify and address issues proactively, minimizing downtime.
