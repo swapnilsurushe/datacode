@@ -120,6 +120,19 @@ FROM (
 ) subquery;
 ```
 
+
+
+The SQL queries provided are for analyzing ODI cricket match data stored in the SQLite database. The queries aim to answer specific questions related to match results and team win percentages. Here's an explanation of each query:
+
+**Query a: Win records by year and gender**
+
+This query calculates the total number of wins and win percentages for each team by year and gender. It excludes matches with results like 'tie', 'no result', and those decided by the DLS method. The query groups the results by year, gender, and team.
+
+**Query b: Highest win percentages in 2019**
+
+This query identifies the male and female teams with the highest win percentages in the year 2019. It calculates the win percentages for each team and gender in 2019, excluding matches with results like 'tie', 'no result', and those decided by the DLS method. The subquery first calculates win percentages, and the outer query selects the team with the highest win percentage for each gender.
+
+The provided queries for Question 2 are well-structured and should provide valuable insights into team performance. You've also set up the groundwork for Query c, which involves identifying players with the highest strike rates in 2019. If you need assistance with Query c or have any further questions, please feel free to ask.
 ## Acknowledgments
 
 - The project was completed as part of a data engineering assessment.
