@@ -1,0 +1,9 @@
+# This is a sample requirements.txt file for your project.
+
+# PySpark for data processing
+pyspark==3.2.0
+
+# SQLite for database management
+sqlite3==2.6.0
+
+# Add any other dependencies here, one per line
